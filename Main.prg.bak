@@ -1,0 +1,35 @@
+
+' C3 Sample Project
+'
+' Use these programs with the C3 Sample virtual controller
+'
+'
+' Sample Program 1
+' Robot works on the center table.
+'
+Function main
+	Integer i
+	
+	Motor On
+	Power High
+	Speed 100, 50, 50
+	Accel 100, 100, 50, 50, 50, 50
+	SpeedS 2000, 1000, 1000
+	AccelS 20000, 20000, 10000, 10000, 10000, 10000
+	
+	Go XY(0, 450, 260, 90, 0, 180)
+	
+	For i = 0 To 2
+		Jump3 Here -TLZ(50), P0 -TLZ(50), P0
+		Wait 0.1
+		Jump3 Here -TLZ(50), P1 -TLZ(50), P1
+		Wait 0.1
+		Jump3 Here -TLZ(50), P2 -TLZ(50), P2
+	Next
+	
+	Go Here -TLZ(50)
+	Go XY(0, 450, 260, 90, 0, 180)
+Fend
+
+
+
